@@ -72,15 +72,6 @@ const Nav = () => {
             >
               LOGOUT
             </button>
-            <button
-              className="btn btn-sm btn-outline-secondary"
-              type="button"
-              onClick={() => {
-                console.log(globalVariable);
-              }}
-            >
-              LOGOUT
-            </button>
           </form>
         </nav>
       </nav>
