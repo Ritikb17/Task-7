@@ -38,8 +38,9 @@ li {
   border: 1px solid black;
 }
 .two{
-   background-color: rgb(209, 209, 215);
-   text-align: center;
+  display: block;
+   text-align: center ;
+   background: rgb(202, 202, 202);
 }
 .HomeDiv{
    

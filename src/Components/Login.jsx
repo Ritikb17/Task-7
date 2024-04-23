@@ -34,7 +34,7 @@ const Login = () => {
     changePass("");
   }
   const setdata = async () => {
-    let copy = [...globalVariable];
+    // let copy = [...globalVariable];
     if (val && Pass) {
       // Getting Firebase Database and Authentication instances
       const db = getDatabase();
@@ -51,22 +51,23 @@ const Login = () => {
         console.log("Logging in", user);
 
         // Reference to the user's data in the database
-        const userRef = ref(db, `${user.displayName}`);
+        const userRef = ref(db);
+        console.log("the Db is ", userRef);
         // Use `await` in `onValue` listener to handle data
         try {
           await onValue(userRef, (snapshot) => {
             const data = snapshot.val();
             // console.log(data.reff);
-            console.log("Current globalVariable:", globalVariable);
             // console.log("Adding to globalVariable:", data.reff);
 
-            editGlobalArray(data.reff);
-            console.log("global value is ", globalVariable);
+            editGlobalArray(data);
+            console.log("value getting is  ", data);
           });
         } catch (err) {
           console.log("leave ");
         }
 
+        console.log("Current globalVariable:", globalVariable);
         // Resetting input values and navigating
         reset();
         navigate("/");

@@ -12,6 +12,7 @@ import Login from "./Login";
 import { getAuth, onAuthStateChanged, useNaviaget } from "firebase/auth";
 import { app } from "./fb.js";
 import "../css/LoginSignin.css";
+import Nav1 from "./Nav1";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -30,8 +31,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Nav />
-      {/* <Login /> */}
+      <Nav1 />
       <div className="shadow-lg p-3 mb-5 bg-body-tertiary rounded" id="one">
         <Link to="/login">
           <button type="button" className="btn btn-outline-secondary">
